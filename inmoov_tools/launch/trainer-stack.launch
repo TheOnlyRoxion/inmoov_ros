@@ -4,7 +4,7 @@
 
 <include file="$(find inmoov_tools)/launch/servobus.launch" />
 
-<node name="trainer" pkg="inmoov_tools" type="trainer.py" respawn="true" />
+<node name="trainer" pkg="inmoov_bringup/tools/trainer" type="trainer.py" respawn="true" />
 
 
 </launch>
