@@ -7,6 +7,7 @@
 		<rosparam param="source_list">["rviz_command"]</rosparam>
 		<rosparam param="rate">20</rosparam>
 	</node>
-	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" 
+	/>
 	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find inmoov_description)/urdf.rviz" required="true" />
 </launch>
