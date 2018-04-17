@@ -27,16 +27,16 @@ It currently implements the following:
 ### What You Need To Get Started
 > This works with a specific technology stack.  It can be run natively on a PC, or in VMWare Player.  Everything is tied to compatibility with MoveIt!.  
 >  
->  MoveIt! is currently available for ROS Indigo, and Indigo is tied to Ubuntu 14.04 LTS, so everything fits together from there.  
+> MoveIt! is currently available for ROS Kinetic, and Kinetic is tied to Ubuntu 16.04 LTS, so everything fits together from there.  
 >   
->   As soon as they release MoveIt! packages for ROS Kinetic, the stack will be updated to Ubuntu 16.04 + ROS Kinetic + MoveIt!
+> Follow Install Instrucktions they help alot
 
 #### What you'll need:
 
- - VMWare Player
+ - VMWare Player (optional)
  (https://my.vmware.com/en/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/12_0)
- - Ubuntu 14.04 LTS (http://www.ubuntu.com/download/alternative-downloads) 
- - ROS Indigo (http://wiki.ros.org/indigo/Installation/Ubuntu)
+ - Ubuntu 16.04 LTS (http://www.ubuntu.com/download/alternative-downloads) 
+ - ROS Kinetic (http://wiki.ros.org/indigo/Installation/Ubuntu)
  - MoveIt! (http://moveit.ros.org/install/)
 
 ### How to Install It:
@@ -49,7 +49,7 @@ Run the following commands from the root of your {inmoov_ros} folder:
 ### How to use it:
 Run the following commands:
 
-    rosrun inmoov_tools set_parameters.py        #loads parameters into server
+    rosrun inmoov_tools setup_parameters.py        #loads parameters into server
     roslaunch inmoov_tools servobus.launch       #launches arduino interfaces
     roslaunch inmoov_description display.launch  #launches rviz
     rosrun inmoov_tools trainer.py               #launches trainer module
@@ -63,3 +63,34 @@ Run the following commands:
  - node:  write node that sends joint commands to arduino through service calls
  - pose:  migrate pose module to pyqt4
  - headdemo:  migrate headdemo module to pyqt4
+### Package list:
+These are the Packages that have been installed on my Maschine most should 
+be installed during the setup guides and tutorials for installing Moveit, ROS-Kinetic.
+
+apt-get:
+ arduino 
+ dkms
+ qt5-default 
+ qtcreator
+ clang-format-3.8 
+ ros-kinetic-desktop-full
+ ros-kinetic-rqt
+ ros-kinetic-rqt-common-plugins
+ ros-kinetic-moveit
+ ros-kinetic-rosserial-arduino
+ ros-kinetic-rosserial
+ ros-kinetic-xarco
+ ros-kinetic-opencv3
+ ros-kinetic-cv-bridge
+ ros-kinetic-compressed-depth-image-tansport
+ ros-kinetic-compressed-image-transport
+ ros-kinetic-usb-cam 
+ ros-kinetic-pyros
+ liburdfdom-tools
+ python-wstool
+ python-catkin-tools
+ python-pip
+ 
+pip:
+ pip install qdarkstyle
+ 
