@@ -68,6 +68,7 @@ These are the Packages that have been installed on my Maschine most should
 be installed during the setup guides and tutorials for installing Moveit, ROS-Kinetic.
 
 apt-get:
+
  arduino 
  dkms
  qt5-default 
@@ -92,5 +93,6 @@ apt-get:
  python-pip
  
 pip:
+
  pip install qdarkstyle
  
