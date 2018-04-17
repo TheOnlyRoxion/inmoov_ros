@@ -44,7 +44,7 @@ Copy these packages into your {inmoov_ros}/src folder
 Run the following commands from the root of your {inmoov_ros} folder:
   
     catkin_make              #build/rebuild all projects
-    source devel/setup.bash  #let ROS know about all of your new packages
+    source devel/setup.bash  #let ROS know about all of your new packages you can also use . instead of source
 
 ### How to use it:
 Run the following commands:
@@ -64,7 +64,7 @@ Run the following commands:
  - pose:  migrate pose module to pyqt4
  - headdemo:  migrate headdemo module to pyqt4
 ### Package list:
-These are the Packages that have been installed on my Maschine most should 
+These are the packages that have been installed on my PC most should 
 be installed during the setup guides and tutorials for installing Moveit, ROS-Kinetic.
 
 apt-get:

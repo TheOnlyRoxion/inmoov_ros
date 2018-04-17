@@ -17,9 +17,9 @@ controller_list:
     joints:
       - waist_pan_joint
       - waist_roll_joint
-      - head_roll_joint
   - name: fake_head_controller
     joints:
+      - head_roll_joint
       - head_tilt_joint
       - head_pan_joint
       - jaw_joint

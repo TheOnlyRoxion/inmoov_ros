@@ -224,7 +224,7 @@ head:
     - LazyPRMstarkConfigDefault
     - SPARSkConfigDefault
     - SPARStwokConfigDefault
-  projection_evaluator: joints(head_tilt_joint,head_pan_joint)
+  projection_evaluator: joints(head_roll_joint,head_tilt_joint)
   longest_valid_segment_fraction: 0.005
 right_hand:
   planner_configs:
