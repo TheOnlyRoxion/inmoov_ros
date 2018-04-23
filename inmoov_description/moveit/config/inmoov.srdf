@@ -16,7 +16,6 @@
         <joint name="r_bicepcover_joint" />
         <joint name="r_elbow_flex_joint" />
         <joint name="r_wrist_roll_joint" />
-        <joint name="r_handcover_joint" />
     </group>
     <group name="left_arm">
         <joint name="l_shoulder_out_joint" />
@@ -25,7 +24,6 @@
         <joint name="l_bicepcover_joint" />
         <joint name="l_elbow_flex_joint" />
         <joint name="l_wrist_roll_joint" />
-        <joint name="l_handcover_joint" />
     </group>
     <group name="torso">
         <joint name="fixed" />
@@ -128,6 +126,31 @@
     <end_effector name="left_eef" parent_link="l_hand_link" group="left_hand" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="fixed" parent_frame="odom_combined" child_link="world" />
+    <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
+    <passive_joint name="l_index1_joint" />
+    <passive_joint name="l_index3_joint" />
+    <passive_joint name="l_middle1_joint" />
+    <passive_joint name="l_middle3_joint" />
+    <passive_joint name="l_pinky1_joint" />
+    <passive_joint name="l_pinky3_joint" />
+    <passive_joint name="l_pinky4_joint" />
+    <passive_joint name="l_ring1_joint" />
+    <passive_joint name="l_ring3_joint" />
+    <passive_joint name="l_ring4_joint" />
+    <passive_joint name="l_thumb1_joint" />
+    <passive_joint name="l_thumb3_joint" />
+    <passive_joint name="r_index1_joint" />
+    <passive_joint name="r_index3_joint" />
+    <passive_joint name="r_middle1_joint" />
+    <passive_joint name="r_middle3_joint" />
+    <passive_joint name="r_pinky1_joint" />
+    <passive_joint name="r_pinky3_joint" />
+    <passive_joint name="r_pinky4_joint" />
+    <passive_joint name="r_ring1_joint" />
+    <passive_joint name="r_ring3_joint" />
+    <passive_joint name="r_ring4_joint" />
+    <passive_joint name="r_thumb1_joint" />
+    <passive_joint name="r_thumb3_joint" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="base_link" link2="chestplate_link" reason="Never" />
     <disable_collisions link1="base_link" link2="disk_link" reason="Never" />
@@ -1740,6 +1763,7 @@
     <disable_collisions link1="l_handcover_link" link2="l_pinky2_link" reason="Never" />
     <disable_collisions link1="l_handcover_link" link2="l_pinky3_link" reason="Never" />
     <disable_collisions link1="l_handcover_link" link2="l_pinky4_link" reason="Never" />
+    <disable_collisions link1="l_handcover_link" link2="l_ring1_link" reason="User" />
     <disable_collisions link1="l_handcover_link" link2="l_ring2_link" reason="Never" />
     <disable_collisions link1="l_handcover_link" link2="l_ring3_link" reason="Never" />
     <disable_collisions link1="l_handcover_link" link2="l_ring4_link" reason="Never" />
@@ -1976,6 +2000,7 @@
     <disable_collisions link1="l_middle3_link" link2="torso_link" reason="Never" />
     <disable_collisions link1="l_pinky1_link" link2="l_pinky2_link" reason="Adjacent" />
     <disable_collisions link1="l_pinky1_link" link2="l_pinky3_link" reason="Never" />
+    <disable_collisions link1="l_pinky1_link" link2="l_pinky4_link" reason="User" />
     <disable_collisions link1="l_pinky1_link" link2="l_ring1_link" reason="Default" />
     <disable_collisions link1="l_pinky1_link" link2="l_ring2_link" reason="Never" />
     <disable_collisions link1="l_pinky1_link" link2="l_ring3_link" reason="Never" />
@@ -2060,6 +2085,7 @@
     <disable_collisions link1="l_pinky4_link" link2="torso_link" reason="Never" />
     <disable_collisions link1="l_ring1_link" link2="l_ring2_link" reason="Adjacent" />
     <disable_collisions link1="l_ring1_link" link2="l_ring3_link" reason="Never" />
+    <disable_collisions link1="l_ring1_link" link2="l_ring4_link" reason="User" />
     <disable_collisions link1="l_ring1_link" link2="l_shoulder_base_link" reason="Never" />
     <disable_collisions link1="l_ring1_link" link2="l_shoulder_link" reason="Never" />
     <disable_collisions link1="l_ring1_link" link2="l_thumb1_link" reason="Never" />
@@ -2611,6 +2637,7 @@
     <disable_collisions link1="r_cover_ring_link" link2="r_pinky2_link" reason="Never" />
     <disable_collisions link1="r_cover_ring_link" link2="r_pinky3_link" reason="Never" />
     <disable_collisions link1="r_cover_ring_link" link2="r_pinky4_link" reason="Never" />
+    <disable_collisions link1="r_cover_ring_link" link2="r_ring1_link" reason="User" />
     <disable_collisions link1="r_cover_ring_link" link2="r_ring2_link" reason="Adjacent" />
     <disable_collisions link1="r_cover_ring_link" link2="r_ring3_link" reason="Never" />
     <disable_collisions link1="r_cover_ring_link" link2="r_ring4_link" reason="Never" />
@@ -2765,6 +2792,7 @@
     <disable_collisions link1="r_handcover_link" link2="r_pinky2_link" reason="Never" />
     <disable_collisions link1="r_handcover_link" link2="r_pinky3_link" reason="Never" />
     <disable_collisions link1="r_handcover_link" link2="r_pinky4_link" reason="Never" />
+    <disable_collisions link1="r_handcover_link" link2="r_ring1_link" reason="User" />
     <disable_collisions link1="r_handcover_link" link2="r_ring2_link" reason="Never" />
     <disable_collisions link1="r_handcover_link" link2="r_ring3_link" reason="Never" />
     <disable_collisions link1="r_handcover_link" link2="r_ring4_link" reason="Never" />
@@ -2909,6 +2937,7 @@
     <disable_collisions link1="r_middle3_link" link2="torso_link" reason="Never" />
     <disable_collisions link1="r_pinky1_link" link2="r_pinky2_link" reason="Adjacent" />
     <disable_collisions link1="r_pinky1_link" link2="r_pinky3_link" reason="Never" />
+    <disable_collisions link1="r_pinky1_link" link2="r_pinky4_link" reason="User" />
     <disable_collisions link1="r_pinky1_link" link2="r_ring1_link" reason="Default" />
     <disable_collisions link1="r_pinky1_link" link2="r_ring2_link" reason="Never" />
     <disable_collisions link1="r_pinky1_link" link2="r_ring3_link" reason="Never" />
@@ -2963,6 +2992,7 @@
     <disable_collisions link1="r_pinky4_link" link2="torso_link" reason="Never" />
     <disable_collisions link1="r_ring1_link" link2="r_ring2_link" reason="Adjacent" />
     <disable_collisions link1="r_ring1_link" link2="r_ring3_link" reason="Never" />
+    <disable_collisions link1="r_ring1_link" link2="r_ring4_link" reason="User" />
     <disable_collisions link1="r_ring1_link" link2="r_shoulder_base_link" reason="Never" />
     <disable_collisions link1="r_ring1_link" link2="r_shoulder_link" reason="Never" />
     <disable_collisions link1="r_ring1_link" link2="r_thumb1_link" reason="Never" />
