@@ -13,144 +13,33 @@
         <joint name="r_shoulder_out_joint" />
         <joint name="r_shoulder_lift_joint" />
         <joint name="r_upper_arm_roll_joint" />
-        <joint name="r_bicepcover_joint" />
         <joint name="r_elbow_flex_joint" />
         <joint name="r_wrist_roll_joint" />
+        <chain base_link="r_shoulder_base_link" tip_link="r_hand_link" />
     </group>
     <group name="left_arm">
         <joint name="l_shoulder_out_joint" />
         <joint name="l_shoulder_lift_joint" />
         <joint name="l_upper_arm_roll_joint" />
-        <joint name="l_bicepcover_joint" />
         <joint name="l_elbow_flex_joint" />
         <joint name="l_wrist_roll_joint" />
+        <chain base_link="l_shoulder_base_link" tip_link="l_hand_link" />
     </group>
     <group name="torso">
-        <joint name="fixed" />
-        <joint name="base_to_pedestal_link" />
         <joint name="pedestal_to_mid_stomach_joint" />
         <joint name="waist_pan_joint" />
-        <joint name="disk_joint" />
         <joint name="waist_roll_joint" />
-        <joint name="chestplate_joint" />
-        <joint name="kinect2_joint" />
-        <joint name="kinect2_rgb_optical_joint" />
+        <chain base_link="base_link" tip_link="kinect2_rgb_optical_frame" />
     </group>
     <group name="head">
         <joint name="head_tilt_joint" />
         <joint name="head_pan_joint" />
-        <joint name="jaw_joint" />
-        <joint name="left_ear_joint" />
-        <joint name="right_ear_joint" />
         <joint name="skull_joint" />
-        <joint name="face_joint" />
-        <joint name="eyes_tilt_joint" />
-        <joint name="eyes_pan_joint" />
-        <joint name="r_camera_joint" />
-        <joint name="r_eye_joint" />
-        <joint name="r_iris_joint" />
-        <joint name="l_eye_pan_joint" />
-        <joint name="l_camera_joint" />
-        <joint name="l_eye_joint" />
-        <joint name="l_iris_joint" />
         <joint name="head_roll_joint" />
+        <chain base_link="head_tilt_link" tip_link="skull_link" />
     </group>
-    <group name="right_hand">
-        <link name="r_index1_link" />
-        <link name="r_cover_index_link" />
-        <link name="r_index2_link" />
-        <link name="r_index3_link" />
-        <link name="r_middle1_link" />
-        <link name="r_cover_middle_link" />
-        <link name="r_middle2_link" />
-        <link name="r_middle3_link" />
-        <link name="r_pinky1_link" />
-        <link name="r_cover_handpinky_link" />
-        <link name="r_pinky2_link" />
-        <link name="r_cover_pinky_link" />
-        <link name="r_pinky3_link" />
-        <link name="r_pinky4_link" />
-        <link name="r_ring1_link" />
-        <link name="r_cover_handring_link" />
-        <link name="r_ring2_link" />
-        <link name="r_cover_ring_link" />
-        <link name="r_ring3_link" />
-        <link name="r_ring4_link" />
-        <link name="r_thumb1_link" />
-        <link name="r_cover_thumb_link" />
-        <link name="r_thumb2_link" />
-        <link name="r_thumb3_link" />
-    </group>
-    <group name="left_hand">
-        <link name="l_index1_link" />
-        <link name="l_cover_index_link" />
-        <link name="l_index2_link" />
-        <link name="l_index3_link" />
-        <link name="l_middle1_link" />
-        <link name="l_cover_middle_link" />
-        <link name="l_middle2_link" />
-        <link name="l_middle3_link" />
-        <link name="l_pinky1_link" />
-        <link name="l_cover_handpinky_link" />
-        <link name="l_pinky2_link" />
-        <link name="l_cover_pinky_link" />
-        <link name="l_pinky3_link" />
-        <link name="l_pinky4_link" />
-        <link name="l_ring1_link" />
-        <link name="l_cover_handring_link" />
-        <link name="l_ring2_link" />
-        <link name="l_cover_ring_link" />
-        <link name="l_ring3_link" />
-        <link name="l_ring4_link" />
-        <link name="l_thumb1_link" />
-        <link name="l_cover_thumb_link" />
-        <link name="l_thumb2_link" />
-        <link name="l_thumb3_link" />
-    </group>
-    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
-    <group_state name="torso_default" group="torso">
-        <joint name="waist_pan_joint" value="0.0341" />
-        <joint name="waist_roll_joint" value="-0.261799" />
-    </group_state>
-    <group_state name="head_default" group="head">
-        <joint name="eyes_pan_joint" value="0.5235" />
-        <joint name="eyes_tilt_joint" value="0.261799" />
-        <joint name="head_pan_joint" value="0.0028" />
-        <joint name="head_roll_joint" value="0" />
-        <joint name="head_tilt_joint" value="0" />
-        <joint name="jaw_joint" value="0" />
-        <joint name="l_eye_pan_joint" value="0.5235" />
-    </group_state>
-    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="right_eef" parent_link="r_hand_link" group="right_arm" />
-    <end_effector name="left_eef" parent_link="l_hand_link" group="left_hand" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="fixed" parent_frame="odom_combined" child_link="world" />
-    <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
-    <passive_joint name="l_index1_joint" />
-    <passive_joint name="l_index3_joint" />
-    <passive_joint name="l_middle1_joint" />
-    <passive_joint name="l_middle3_joint" />
-    <passive_joint name="l_pinky1_joint" />
-    <passive_joint name="l_pinky3_joint" />
-    <passive_joint name="l_pinky4_joint" />
-    <passive_joint name="l_ring1_joint" />
-    <passive_joint name="l_ring3_joint" />
-    <passive_joint name="l_ring4_joint" />
-    <passive_joint name="l_thumb1_joint" />
-    <passive_joint name="l_thumb3_joint" />
-    <passive_joint name="r_index1_joint" />
-    <passive_joint name="r_index3_joint" />
-    <passive_joint name="r_middle1_joint" />
-    <passive_joint name="r_middle3_joint" />
-    <passive_joint name="r_pinky1_joint" />
-    <passive_joint name="r_pinky3_joint" />
-    <passive_joint name="r_pinky4_joint" />
-    <passive_joint name="r_ring1_joint" />
-    <passive_joint name="r_ring3_joint" />
-    <passive_joint name="r_ring4_joint" />
-    <passive_joint name="r_thumb1_joint" />
-    <passive_joint name="r_thumb3_joint" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="base_link" link2="chestplate_link" reason="Never" />
     <disable_collisions link1="base_link" link2="disk_link" reason="Never" />

@@ -7,36 +7,50 @@ joint_limits:
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: 0.52
+    min_position: -0.52
   eyes_tilt_joint:
     has_velocity_limits: false
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: 0.26
+    min_position: -0.26
   head_pan_joint:
     has_velocity_limits: false
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: 1.57
+    min_position: -1.57
   head_roll_joint:
     has_velocity_limits: false
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: 0.26  
+    min_position: -0.26
   head_tilt_joint:
     has_velocity_limits: false
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: 0.35
+    min_position: -0.35
   jaw_joint:
     has_velocity_limits: false
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: 0.09
+    min_position: 0
   l_elbow_flex_joint:
     has_velocity_limits: false
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: -0.26
+    min_position: -1.48
   l_eye_pan_joint:
     has_velocity_limits: false
     max_velocity: 0
@@ -57,6 +71,8 @@ joint_limits:
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: -0.09
+    min_position: -1.48
   l_middle1_joint:
     has_velocity_limits: false
     max_velocity: 0
@@ -72,6 +88,8 @@ joint_limits:
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: -0.09
+    min_position: -1.48
   l_pinky1_joint:
     has_velocity_limits: false
     max_velocity: 0
@@ -92,6 +110,8 @@ joint_limits:
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: -0.09
+    min_position: -1.48
   l_ring1_joint:
     has_velocity_limits: false
     max_velocity: 0
@@ -112,16 +132,22 @@ joint_limits:
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: -0.09
+    min_position: -1.48
   l_shoulder_lift_joint:
     has_velocity_limits: false
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: 0.79
+    min_position: -2.36
   l_shoulder_out_joint:
     has_velocity_limits: false
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: 0.09
+    min_position: 1.05
   l_thumb1_joint:
     has_velocity_limits: false
     max_velocity: 0
@@ -137,17 +163,30 @@ joint_limits:
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: 1.13
+    min_position: -0.09
   l_upper_arm_roll_joint:
     has_velocity_limits: false
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: 1.57
+    min_position: -1.57
   l_wrist_roll_joint:
     has_velocity_limits: false
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: 3.14
+    min_position: 0.0
   r_elbow_flex_joint:
+    has_velocity_limits: false
+    max_velocity: 0
+    has_acceleration_limits: false
+    max_acceleration: 0
+    max_position: -0.26
+    min_position: -1.48
+  r_eye_pan_joint:
     has_velocity_limits: false
     max_velocity: 0
     has_acceleration_limits: false
@@ -167,6 +206,8 @@ joint_limits:
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: -0.09
+    min_position: -1.48
   r_middle1_joint:
     has_velocity_limits: false
     max_velocity: 0
@@ -182,6 +223,8 @@ joint_limits:
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: -0.09
+    min_position: -1.48
   r_pinky1_joint:
     has_velocity_limits: false
     max_velocity: 0
@@ -202,6 +245,8 @@ joint_limits:
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: -0.09
+    min_position: -1.48
   r_ring1_joint:
     has_velocity_limits: false
     max_velocity: 0
@@ -222,16 +267,22 @@ joint_limits:
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: -0.09
+    min_position: -1.48
   r_shoulder_lift_joint:
     has_velocity_limits: false
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: 0.79
+    min_position: -2.36
   r_shoulder_out_joint:
     has_velocity_limits: false
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: -0.09
+    min_position: -1.05
   r_thumb1_joint:
     has_velocity_limits: false
     max_velocity: 0
@@ -247,23 +298,33 @@ joint_limits:
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: 1.13
+    min_position: -0.09
   r_upper_arm_roll_joint:
     has_velocity_limits: false
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: 1.57
+    min_position: -1.57
   r_wrist_roll_joint:
     has_velocity_limits: false
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: 3.14
+    min_position: 0.0
   waist_pan_joint:
     has_velocity_limits: false
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: 1.57
+    min_position: -1.57
   waist_roll_joint:
     has_velocity_limits: false
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
+    max_position: 0.26
+    min_position: -0.26
