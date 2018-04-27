@@ -96,3 +96,6 @@ pip:
 
  pip install qdarkstyle
  
+ ### Usefull Links:
+ https://github.com/ubi-agni/dexterous-manipulation-tutorial/wiki
+ https://github.com/guihomework/dexterous-manipulation-tutorial/wiki/tuto-prep-part1

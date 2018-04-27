@@ -8,7 +8,7 @@
 
   <!-- Run -->
   <node pkg="moveit_setup_assistant" type="moveit_setup_assistant" name="moveit_setup_assistant" 
-	args="--config_pkg=/home/nixdorf/inMoove_ROS_Project/catkin_ws/src/inmoov_ros/inmoov_description/moveit/"
+	args="--config_pkg=moveit"
 	launch-prefix="$(arg launch_prefix)"
         output="screen" />
 
