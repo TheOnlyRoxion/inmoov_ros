@@ -71,8 +71,8 @@ joint_limits:
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
-    max_position: -0.09
-    min_position: -1.48
+    max_position: 0.09
+    min_position: 1.48
   l_middle1_joint:
     has_velocity_limits: false
     max_velocity: 0
@@ -88,8 +88,8 @@ joint_limits:
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
-    max_position: -0.09
-    min_position: -1.48
+    max_position: 0.09
+    min_position: 1.48
   l_pinky1_joint:
     has_velocity_limits: false
     max_velocity: 0
@@ -110,8 +110,8 @@ joint_limits:
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
-    max_position: -0.09
-    min_position: -1.48
+    max_position: 0.09
+    min_position: 1.48
   l_ring1_joint:
     has_velocity_limits: false
     max_velocity: 0
@@ -132,8 +132,8 @@ joint_limits:
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
-    max_position: -0.09
-    min_position: -1.48
+    max_position: 0.09
+    min_position: 1.48
   l_shoulder_lift_joint:
     has_velocity_limits: false
     max_velocity: 0
@@ -206,8 +206,8 @@ joint_limits:
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
-    max_position: -0.09
-    min_position: -1.48
+    max_position: 0.09
+    min_position: 1.48
   r_middle1_joint:
     has_velocity_limits: false
     max_velocity: 0
@@ -223,8 +223,8 @@ joint_limits:
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
-    max_position: -0.09
-    min_position: -1.48
+    max_position: 0.09
+    min_position: 1.48
   r_pinky1_joint:
     has_velocity_limits: false
     max_velocity: 0
@@ -245,8 +245,8 @@ joint_limits:
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
-    max_position: -0.09
-    min_position: -1.48
+    max_position: 0.09
+    min_position: 1.48
   r_ring1_joint:
     has_velocity_limits: false
     max_velocity: 0
@@ -267,8 +267,8 @@ joint_limits:
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0
-    max_position: -0.09
-    min_position: -1.48
+    max_position: 0.09
+    min_position: 1.48
   r_shoulder_lift_joint:
     has_velocity_limits: false
     max_velocity: 0

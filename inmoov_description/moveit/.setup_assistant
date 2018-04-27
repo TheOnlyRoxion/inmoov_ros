@@ -7,4 +7,4 @@ moveit_setup_assistant_config:
   CONFIG:
     author_name: iRobot
     author_email: inmoov@tobiasnixdorf.de
-    generated_timestamp: 1524593849
+    generated_timestamp: 1524846039
