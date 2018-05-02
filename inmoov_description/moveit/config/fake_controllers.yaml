@@ -12,6 +12,7 @@ controller_list:
       - l_shoulder_lift_joint
       - l_upper_arm_roll_joint
       - l_elbow_flex_joint
+      - l_wrist_roll_joint
   - name: fake_torso_controller
     joints:
       - waist_pan_joint
@@ -39,7 +40,41 @@ controller_list:
       - l_thumb_joint
   - name: fake_r_thumb_controller
     joints:
+      - r_wrist_roll_joint
       - r_thumb_joint
   - name: fake_l_thumb_controller
     joints:
+      - l_wrist_roll_joint
       - l_thumb_joint
+  - name: fake_r_index_controller
+    joints:
+      - r_wrist_roll_joint
+      - r_index_joint
+  - name: fake_r_middle_controller
+    joints:
+      - r_wrist_roll_joint
+      - r_middle_joint
+  - name: fake_r_ring_controller
+    joints:
+      - r_wrist_roll_joint
+      - r_ring_joint
+  - name: fake_r_pinky_controller
+    joints:
+      - r_wrist_roll_joint
+      - r_pinky_joint
+  - name: fake_l_index_controller
+    joints:
+      - l_wrist_roll_joint
+      - l_index_joint
+  - name: fake_l_middle_controller
+    joints:
+      - l_wrist_roll_joint
+      - l_middle_joint
+  - name: fake_l_ring_controller
+    joints:
+      - l_wrist_roll_joint
+      - l_ring_joint
+  - name: fake_l_pinky_controller
+    joints:
+      - l_wrist_roll_joint
+      - l_pinky_joint

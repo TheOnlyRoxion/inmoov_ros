@@ -22,6 +22,7 @@
         <joint name="l_shoulder_lift_joint" />
         <joint name="l_upper_arm_roll_joint" />
         <joint name="l_elbow_flex_joint" />
+        <joint name="l_wrist_roll_joint" />
         <chain base_link="l_shoulder_base_link" tip_link="l_forearm_link" />
     </group>
     <group name="torso">
@@ -94,15 +95,40 @@
         <joint name="l_thumb3_joint" />
     </group>
     <group name="r_thumb">
-        <chain base_link="r_hand_link" tip_link="r_thumb3_link" />
+        <chain base_link="r_forearm_link" tip_link="r_thumb3_link" />
     </group>
     <group name="l_thumb">
-        <chain base_link="l_hand_link" tip_link="l_thumb3_link" />
+        <chain base_link="l_forearm_link" tip_link="l_thumb3_link" />
+    </group>
+    <group name="r_index">
+        <chain base_link="r_forearm_link" tip_link="r_index3_link" />
+    </group>
+    <group name="r_middle">
+        <chain base_link="r_forearm_link" tip_link="r_middle3_link" />
+    </group>
+    <group name="r_ring">
+        <chain base_link="r_forearm_link" tip_link="r_ring4_link" />
+    </group>
+    <group name="r_pinky">
+        <chain base_link="r_forearm_link" tip_link="r_pinky4_link" />
+    </group>
+    <group name="l_index">
+        <chain base_link="l_forearm_link" tip_link="l_index3_link" />
+    </group>
+    <group name="l_middle">
+        <chain base_link="l_forearm_link" tip_link="l_middle3_link" />
+    </group>
+    <group name="l_ring">
+        <chain base_link="l_forearm_link" tip_link="l_ring4_link" />
+    </group>
+    <group name="l_pinky">
+        <chain base_link="l_forearm_link" tip_link="l_pinky4_link" />
     </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="r_thumb_eef" parent_link="r_thumb3_link" group="r_thumb" parent_group="r_hand" />
-    <end_effector name="l_thumb_eef" parent_link="l_thumb3_link" group="l_thumb" parent_group="l_thumb" />
+    <end_effector name="l_thumb_eef" parent_link="l_thumb3_link" group="l_thumb" parent_group="l_hand" />
     <end_effector name="r_hand_eef" parent_link="r_hand_link" group="r_hand" />
+    <end_effector name="l_hand_eef" parent_link="r_hand_link" group="l_hand" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="fixed" parent_frame="odom_combined" child_link="world" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
