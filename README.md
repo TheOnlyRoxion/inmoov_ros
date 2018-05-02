@@ -25,7 +25,7 @@ It currently implements the following:
  - trainer module to set arduino eeprom values and calibrate each servo
 
 ### What You Need To Get Started
-> This works with a specific technology stack.  It can be run natively on a PC, or in VMWare Player.  Everything is tied to compatibility with MoveIt!.  
+> This works with a specific technology stack.  It can be run natively on a PC.  Everything is tied to compatibility with MoveIt!.  
 >  
 > MoveIt! is currently available for ROS Kinetic, and Kinetic is tied to Ubuntu 16.04 LTS, so everything fits together from there.  
 >   
@@ -33,8 +33,6 @@ It currently implements the following:
 
 #### What you'll need:
 
- - VMWare Player (optional)
- (https://my.vmware.com/en/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/12_0)
  - Ubuntu 16.04 LTS (http://www.ubuntu.com/download/alternative-downloads) 
  - ROS Kinetic (http://wiki.ros.org/indigo/Installation/Ubuntu)
  - MoveIt! (http://moveit.ros.org/install/)
@@ -87,6 +85,7 @@ apt-get:
  ros-kinetic-compressed-image-transport
  ros-kinetic-usb-cam 
  ros-kinetic-pyros
+ ors-kinetic-trac_ik
  liburdfdom-tools
  python-wstool
  python-catkin-tools
