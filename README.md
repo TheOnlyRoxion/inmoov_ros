@@ -29,7 +29,7 @@ It currently implements the following:
 >  
 > MoveIt! is currently available for ROS Kinetic, and Kinetic is tied to Ubuntu 16.04 LTS, so everything fits together from there.  
 >   
-> Follow Install Instrucktions they help alot
+> Follow Install Instructions they help alot
 
 #### What you'll need:
 
