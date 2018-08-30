@@ -6,7 +6,7 @@
 #include <inmoov_msgs/MotorParameter.h>
 #include <inmoov_msgs/SmartServoStatus.h>
 #include <std_srvs/Empty.h>
-#include <i2c_t3.h>
+//#include <i2c_t3.h>
 #include "protocol.h"
 
 #define I2C_DELAY   0  //per packet delay seems to work at 100kbps
@@ -152,7 +152,7 @@ void commandCb( const inmoov_msgs::MotorCommand& command_msg) {
 
     case P_GOALPOSITION:
       shortVal = short(value * 100.0);
-      writeServoRegister(id, GOAL, shortVal);
+//      writeServoRegister(id, GOAL, shortVal);
       //tServo[id]->setGoal(value);
 
       //String string = "Goal Position = " + String(tServo[id]->commandPulse);
@@ -161,59 +161,59 @@ void commandCb( const inmoov_msgs::MotorCommand& command_msg) {
 
     case P_MINANGLE:
       shortVal = short(value * 100.0);
-      writeServoRegister(id, MINGOAL, shortVal);
+//      writeServoRegister(id, MINGOAL, shortVal);
       //tServo[id]->setMinAngle(value);
       break;
 
     case P_MAXANGLE:
       shortVal = short(value * 100.0);
-      writeServoRegister(id, MAXGOAL, shortVal);
+//      writeServoRegister(id, MAXGOAL, shortVal);
       //tServo[id]->setMaxAngle(value);
       break;
 
     case P_MINPULSE:
-      writeServoRegister(id, MINPULSE, shortVal);
+//      writeServoRegister(id, MINPULSE, shortVal);
       //tServo[id]->setMinPulse(value);
       break;
 
     case P_MAXPULSE:
-      writeServoRegister(id, MAXPULSE, shortVal);
+//      writeServoRegister(id, MAXPULSE, shortVal);
       //tServo[id]->setMaxPulse(value);
       break;
 
     case P_ENABLE:
-      writeServoRegister(id, ENABLED, shortVal);
+ //     writeServoRegister(id, ENABLED, shortVal);
       //tServo[id]->setEnabled(value);
       break;
 
     case P_CALIBRATED:
-      writeServoRegister(id, CALIBRATED, shortVal);
+  //    writeServoRegister(id, CALIBRATED, shortVal);
       //tServo[id]->setCalibrated(value);
       break;
 
     case P_MINSENSOR:
-      writeServoRegister(id, MINSENSOR, shortVal);
+  //    writeServoRegister(id, MINSENSOR, shortVal);
       //tServo[id]->setMinSensor(value);
       break;
 
     case P_MAXSENSOR:
-      writeServoRegister(id, MAXSENSOR, shortVal);
+    //  writeServoRegister(id, MAXSENSOR, shortVal);
       //tServo[id]->setMaxSensor(value);
       break;
 
     case P_SMOOTH:
-      writeServoRegister(id, SMOOTHING, shortVal);
+      //writeServoRegister(id, SMOOTHING, shortVal);
       //tServo[id]->setSmooth(value);
       break;
 
     case P_GOALSPEED:
       shortVal = short(value * 100.0);
-      writeServoRegister(id, GOALSPEED, shortVal);
+ //     writeServoRegister(id, GOALSPEED, shortVal);
     //tServo[id]->setMaxSpeed(value);
 
     case P_MAXTEMP:
       shortVal = short(value * 100.0);
-      writeServoRegister(id, MAXTEMP, shortVal);
+  //    writeServoRegister(id, MAXTEMP, shortVal);
       //tServo[id]->setMaxSpeed(value);
 
   }
@@ -231,7 +231,7 @@ ros::ServiceServer<inmoov_msgs::MotorParameter::Request, inmoov_msgs::MotorParam
 
 
 void setupADC() {
-  analogReadResolution(12);
+  //analogReadResolution(12);
   analogReference(EXTERNAL);
 }
 
@@ -257,14 +257,14 @@ void setup() {
   pinMode(LED, OUTPUT);
   digitalWrite(LED, 1);
 
-  Wire.begin(I2C_MASTER, 0x00, I2C_PINS_18_19, I2C_PULLUP_EXT, 200000);
+//  Wire.begin(I2C_MASTER, 0x00, I2C_PINS_18_19, I2C_PULLUP_EXT, 200000);
   //Wire.begin(); // join i2c bus (address optional for master)
   // 511us per message at 100kbps
   // 287us per message at 200kbps
   // 215us per message at 300kbps
   // 181us per message at 400kbps
   //Wire.setRate(I2C_RATE_200);
-  Wire.setDefaultTimeout(10000);
+//  Wire.setDefaultTimeout(10000);
 
   nh.initNode();
   nh.advertise(smartservostatus);
@@ -280,7 +280,7 @@ void setup() {
 
   setupServos();
 
-  //Serial.begin(115200);
+  Serial.begin(57600);
 
   startMillis = millis();
   updateMillis = millis();
@@ -353,7 +353,7 @@ void generateMotorStatus() {
 
 short readServoRegister(byte servo, byte reg) {
   byte checksum = ~(reg );
-  Wire.beginTransmission(servo); // transmit to device #8
+/*  Wire.beginTransmission(servo); // transmit to device #8
   Wire.write(reg);
   //Wire.write(READREGISTER);
   Wire.write(checksum);
@@ -364,29 +364,29 @@ short readServoRegister(byte servo, byte reg) {
 
   cshort.val = -1;
   for (int i = 0; i < 2; i++) {
-    cshort.b[i] = Wire.read();
+    cshort.b[i] = Wire.read();*/
   }
 
-  byte responseChecksum = Wire.read();
+//  byte responseChecksum = Wire.read();
   //delayMicroseconds(I2C_DELAY);
 
-  byte calculatedChecksum = ~(responseRegister + cshort.b[0] + cshort.b[1]);
+//  byte calculatedChecksum = ~(responseRegister + cshort.b[0] + cshort.b[1]);
 
-  if ((reg == responseRegister) & (calculatedChecksum == responseChecksum)) {
+/*  if ((reg == responseRegister) & (calculatedChecksum == responseChecksum)) {
     return cshort.val;
   }
   else {
     nh.loginfo("Invalid Checksum on Read");
     return -1;
   }
+*/
 
-
-}
+//}
 
 void writeServoRegister(byte servo, byte reg, short value) {
   cshort.val = value;
   byte checksum = ~(reg  + cshort.b[0] + cshort.b[1]);
-  Wire.beginTransmission(servo); // transmit to device #8
+ /* Wire.beginTransmission(servo); // transmit to device #8
   Wire.write(reg);        // sends five bytes
   //Wire.write(WRITEREGISTER);
   Wire.write(cshort.b[0]);
@@ -395,6 +395,6 @@ void writeServoRegister(byte servo, byte reg, short value) {
   Wire.endTransmission();    // stop
 
   //nh.loginfo(String(readServoRegister(8, GOAL), DEC).toCharArray());
-  //delayMicroseconds(I2C_DELAY);
+  //delayMicroseconds(I2C_DELAY);*/
 }
 

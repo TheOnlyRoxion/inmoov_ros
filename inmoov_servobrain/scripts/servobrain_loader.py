@@ -39,7 +39,7 @@ smartservostatus = SmartServoStatus()
 def init():
     
     rospy.init_node('servo_adc_tester', anonymous=False)
-    rate = rospy.Rate(40) # 40hz
+    rate = rospy.Rate(20) # 40hz
 
     servos = load_config_from_param()
 

@@ -1,6 +1,6 @@
 #include <EEPROM.h>
 #include <Servo.h>
-#include <WProgram.h>
+#include <Arduino.h>
 #include "configuration.h"
 #include "TeensyServo.h"
 #include <ros.h>
@@ -304,7 +304,7 @@ void TeensyServo::update() {
 */
 
 void TeensyServo::setupADC() {
-  analogReadResolution(12);
+ // analogReadResolution(12);
   analogReference(EXTERNAL);
   //analogReadAveraging(8);
 }

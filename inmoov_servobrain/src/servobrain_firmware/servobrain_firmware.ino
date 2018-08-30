@@ -22,7 +22,7 @@
 */
 
 // Get this from https://github.com/rambo/TinyWire
-#include <TinyWireS.h>
+//#include <TinyWireS.h>
 #include "protocol.h"
 #include <avr/sleep.h>
 

@@ -1,3 +1,6 @@
+
+#include <ros.h>
+
 #include <EEPROM.h>
 #include <Servo.h>
 #include "TeensyServo.h"
@@ -170,7 +173,7 @@ ros::ServiceServer<inmoov_msgs::MotorParameter::Request, inmoov_msgs::MotorParam
 
 
 void setupADC() {
-  analogReadResolution(12);
+//  analogReadResolution(12);
   analogReference(EXTERNAL);
 }
 
@@ -219,7 +222,7 @@ void setup() {
 
   setupServos();
 
-  Serial.begin(115200);
+  Serial.begin(19200);
 
   startMillis = millis();
   updateMillis = millis();

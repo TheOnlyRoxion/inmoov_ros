@@ -51,7 +51,9 @@ def init():
 
             try:
                 motorcommand = MotorCommand()
-                motorcommand.id = int(servos[j].servoPin)
+                rospy.loginfo('Servo1s:  ')
+                motorcommand.id = int(servos[0].servoPin)
+                rospy.loginfo('Servo2s:  ')
                 motorcommand.parameter = PROTOCOL.GOAL
                 motorcommand.value = p
 

@@ -21,7 +21,7 @@ def load_config_from_param():
     # first, make sure parameter server is even loaded
     while not rospy.search_param("/joints"):
         rospy.loginfo("waiting for parameter server to load with joint definitions")
-        rospy.sleep(1)
+        rospy.sleep(1000)
 
     rospy.sleep(1)
 
