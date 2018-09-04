@@ -7,7 +7,7 @@
   </node>
 </group>
 
-<node pkg="inmoov_control" type="inmoov_translator.py" name="inmoov_translator" respawn="false"/>
+<node pkg="inmoov_control" type="inmoov_translator_server.py" name="inmoov_translator" respawn="false"/>
 
 
 
