@@ -3,11 +3,15 @@
 <!--group ns="servobus/00"-->
   <node pkg="rosserial_python" type="serial_node.py" name="bus" respawn="true" output="screen" >
     <param name="port" value="/dev/ttyACM0"/>
-    <param name="baud" value="256000"/>
+    <param name="baud" value="115200"/>
   </node>
 <!--/group-->
 
-<node pkg="inmoov_controls" type="inmoov_translator_server.py" name="inmoov_translator" respawn="false" output="screen" />
+<!--output="screen" defines where rosnode error messages go-->
+
+<node pkg="inmoov_controls" type="inmoov_topic_splitter.py" name="inmoov_splitter" respawn="true" output="screen" />
+
+<!--node pkg="inmoov_controls" type="inmoov_translator_server.py" name="inmoov_translator" respawn="false" output="screen" / -->
 
 
 

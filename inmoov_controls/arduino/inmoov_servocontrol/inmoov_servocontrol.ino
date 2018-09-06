@@ -24,7 +24,8 @@
 
 
 #include <ros.h>
-#include <sensor_msgs/JointState.h>
+//#include <sensor_msgs/JointState.h>
+#include <inmoov_msgs/MotorCommand.h>
 #include <Servo.h>
 //#include "InmoovTranslator.h"
 
@@ -37,44 +38,38 @@ ros::NodeHandle  nh;
 //InmoovTranslator::Request req;
 //InmoovTranslator::Response res;
 
+const int maxServoCount = 10;
+Servo _servo[maxServoCount];
 
-Servo servo;
+
 //funktion which is called after joint state message is recived
-void servo_cb( const sensor_msgs::JointState& cmd_msg) {
-  servo.attach(3);
-  servo.write(30); //set servo angle, should be from 0-180
-  digitalWrite(13, HIGH - digitalRead(13)); //toggle led #
+void servo_cb( const inmoov_msgs::MotorCommand& cmd_msg) {
 
+  _servo[cmd_msg.id].write(cmd_msg.value);
+
+  digitalWrite(13, HIGH - digitalRead(13)); //toggle led #
+  nh.loginfo("Message recived");
 }
 
 //declaring subsriber to joint states
-ros::Subscriber<sensor_msgs::JointState> sub("joint_states", servo_cb);
+ros::Subscriber<inmoov_msgs::MotorCommand> sub("joint_states_r", servo_cb);
 
 void setup() {
   pinMode(13, OUTPUT);
 
+  for (int i = 0; i < maxServoCount; ++i)
+    _servo[i].attach(i);
+
+
+
   nh.initNode();
   nh.subscribe(sub);
-  //nh.serviceClient(client);
-  
-  //req.joint = "fetch_all";
-  //client.call(req, res);
-  //int h = res.pin;
-
-
-   servo.attach(3);//attach it to pin 3
-
-  servo.write(30);
-  nh.loginfo("Test 30");
-  delay(1000);
-  servo.write(160);
-  nh.loginfo("Test 160");
-  delay(1000);
   nh.loginfo("Startup complete");
+
 }
 
 
 void loop() {
   nh.spinOnce();
-  delay(1);
+  //delay(1);
 }
