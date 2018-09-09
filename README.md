@@ -78,7 +78,7 @@ apt-get:
  ros-kinetic-moveit
  ros-kinetic-rosserial-arduino
  ros-kinetic-rosserial
- ros-kinetic-xarco
+ ros-kinetic-xacro
  ros-kinetic-opencv3
  ros-kinetic-cv-bridge
  ros-kinetic-compressed-depth-image-transport
