@@ -81,11 +81,11 @@ apt-get:
  ros-kinetic-xarco
  ros-kinetic-opencv3
  ros-kinetic-cv-bridge
- ros-kinetic-compressed-depth-image-tansport
+ ros-kinetic-compressed-depth-image-transport
  ros-kinetic-compressed-image-transport
  ros-kinetic-usb-cam 
  ros-kinetic-pyros
- ors-kinetic-trac_ik
+ ros-kinetic-trac-ik
  liburdfdom-tools
  python-wstool
  python-catkin-tools
