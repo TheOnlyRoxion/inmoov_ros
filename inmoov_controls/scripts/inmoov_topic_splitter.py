@@ -12,10 +12,10 @@ pub_r = rospy.Publisher('/joint_states_r', MotorCommand, queue_size=10)
 
 name=()
 servoPin=()
-minGoal=[]
-maxGoal=[]
-minIn=[]
-maxIn=[]
+minGoal=()
+maxGoal=()
+minIn=()
+maxIn=()
 
 
 def init():
@@ -25,15 +25,15 @@ def init():
     global maxGoal
     global minIn
     global maxIn
-    time.sleep(20)
+    time.sleep(10)
     for j,b in rospy.get_param('/joints').items():
         name+=j,
         servoPin+=rospy.get_param('/joints/' + j + '/servoPin',99),
-        minGoal+=rospy.get_param('/joints/' + j + '/minGoal',30),
-        maxGoal+=rospy.get_param('/joints/' + j + '/maxGoal',180),
+        minGoal+=rospy.get_param('/joints/' + j + '/minGoal',31),
+        maxGoal+=rospy.get_param('/joints/' + j + '/maxGoal',91),
         minIn+=rospy.get_param('/robot_description_planning/joint_limits/' + j + '/min_position',0),
         maxIn+=rospy.get_param('/robot_description_planning/joint_limits/' + j + '/max_position',0),
-    rospy.loginfo("I found joints: %s with pin %s", name,servoPin)
+    #rospy.loginfo("I found joints: %s with pin %s with input range %s / %s and output range %s / %s", name,servoPin,minIn,maxIn,minGoal,maxGoal)
  
  
 def mapFromTo(x,a,b,c,d):
@@ -42,13 +42,20 @@ def mapFromTo(x,a,b,c,d):
 
 
 def transform_callback(data):
+    global name
+    global servoPin
+    global minGoal
+    global maxGoal
+    global minIn
+    global maxIn
+    
     motorcommand = MotorCommand()  
     
-    for i,n in enumerate(name):
+    for i,n in enumerate(name,0):
         if n in data.name :
             if servoPin[i]<90:
                 motorcommand.id = servoPin[i]
-                motorcommand.value = mapFromTo(data.position[i], minIn[i],maxIn[i], minGoal[i], maxGoal[i])
+                motorcommand.value = mapFromTo(data.position[data.name.index(n)], minIn[i],maxIn[i], minGoal[i], maxGoal[i])
                 pub_r.publish(motorcommand)
                 #rospy.loginfo("I move %s at Pin %s  to %s",n,motorcommand.id, motorcommand.value)
 

@@ -38,7 +38,7 @@ ros::NodeHandle  nh;
 //InmoovTranslator::Request req;
 //InmoovTranslator::Response res;
 
-const int maxServoCount = 12;
+const int maxServoCount = 13;
 Servo _servo[maxServoCount];
 
 
@@ -48,7 +48,7 @@ void servo_cb( const inmoov_msgs::MotorCommand& cmd_msg) {
   _servo[cmd_msg.id].write(cmd_msg.value);
 
   digitalWrite(13, HIGH - digitalRead(13)); //toggle led #
-  nh.loginfo("Message recived");
+  //nh.loginfo("Message recived");
 }
 
 //declaring subsriber to joint states
