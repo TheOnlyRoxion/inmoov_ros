@@ -38,7 +38,7 @@ ros::NodeHandle  nh;
 //InmoovTranslator::Request req;
 //InmoovTranslator::Response res;
 
-const int maxServoCount = 13;
+const int maxServoCount = 30;
 Servo _servo[maxServoCount];
 
 
@@ -52,7 +52,7 @@ void servo_cb( const inmoov_msgs::MotorCommand& cmd_msg) {
 }
 
 //declaring subsriber to joint states
-ros::Subscriber<inmoov_msgs::MotorCommand> sub("joint_states_r", servo_cb);
+ros::Subscriber<inmoov_msgs::MotorCommand> sub("joint_states_l", servo_cb);
 
 void setup() {
   pinMode(13, OUTPUT);
