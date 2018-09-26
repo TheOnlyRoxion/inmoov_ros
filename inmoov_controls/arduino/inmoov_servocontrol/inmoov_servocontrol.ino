@@ -47,7 +47,7 @@ void servo_cb( const inmoov_msgs::MotorCommand& cmd_msg) {
 
   _servo[cmd_msg.id].write(cmd_msg.value);
 
-  digitalWrite(13, HIGH - digitalRead(13)); //toggle led #
+  //digitalWrite(13, HIGH - digitalRead(13)); //toggle led #
   //nh.loginfo("Message recived");
 }
 
@@ -55,7 +55,7 @@ void servo_cb( const inmoov_msgs::MotorCommand& cmd_msg) {
 ros::Subscriber<inmoov_msgs::MotorCommand> sub("joint_states_l", servo_cb);
 
 void setup() {
-  pinMode(13, OUTPUT);
+ // pinMode(13, OUTPUT);
 
   for (int i = 0; i < maxServoCount; ++i)
     _servo[i].attach(i);
