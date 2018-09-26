@@ -38,7 +38,7 @@ ros::NodeHandle  nh;
 //InmoovTranslator::Request req;
 //InmoovTranslator::Response res;
 
-const int maxServoCount = 10;
+const int maxServoCount = 12;
 Servo _servo[maxServoCount];
 
 
