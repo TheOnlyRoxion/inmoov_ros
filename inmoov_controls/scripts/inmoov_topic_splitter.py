@@ -27,7 +27,7 @@ def init():
     global minIn
     global maxIn
     global bus
-    time.sleep(10)
+    time.sleep(1)
     for j,b in rospy.get_param('/joints').items():
         name+=j,
         servoPin+=rospy.get_param('/joints/' + j + '/servoPin',99),

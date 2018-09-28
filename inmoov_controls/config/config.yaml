@@ -344,9 +344,9 @@ joints:
     bus:            2
     servoPin:       24
     minPulse:       550
-    maxPulse:       1100
-    minGoal:        170.0
-    maxGoal:        50.0
+    maxPulse:       110
+    minGoal:        200.0
+    maxGoal:        0.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -361,6 +361,20 @@ joints:
     maxPulse:       1100
     minGoal:        40.0
     maxGoal:        140.0
+    rest:           0.0
+    maxSpeed:       0.0
+    smoothing:      0
+    sensorPin:      17
+    minSensor:      750
+    maxSensor:      1520
+    
+  jaw_joint:
+    bus:            2
+    servoPin:       26
+    minPulse:       550
+    maxPulse:       1100
+    minGoal:        40.0
+    maxGoal:        200.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
